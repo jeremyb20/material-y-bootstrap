@@ -22,7 +22,35 @@
 			controllerAs: 'vm'
 		})
 
+		.state('pets', {
+			url: '/animales',
+			templateUrl: 'components/pets/pets.view.html',
+			css: 'components/pets/pets.style.css',
+			resolve: {
+				load: ['$ocLazyLoad', function($ocLazyLoad){
+					return $ocLazyLoad.load('components/pets/pets.controller.js')
+				}]
+			},
+			controller: 'petsController',
+			controllerAs: 'vm'
+		})
+
+		.state('families', {
+			url: '/familiares',
+			templateUrl: 'components/families/families.view.html',
+			css: 'components/families/families.style.css',
+			resolve: {
+				load: ['$ocLazyLoad', function($ocLazyLoad){
+					return $ocLazyLoad.load('components/families/families.controller.js')
+				}]
+			},
+			controller: 'familiesController',
+			controllerAs: 'vm'
+		})
+
 		$urlRouterProvider.otherwise('/usuarios');
+		$urlRouterProvider.otherwise('/animales');
+		$urlRouterProvider.otherwise('/familiares');
 	};
 
 	function tabCtrl($scope,$location,$log){
@@ -34,11 +62,12 @@
 					$location.url("/usuarios");
 				break;
 				case 1:
-					$location.url("/");
+					$location.url("/animales");
 				break;
 				case 2:
-					$location.url("/");
+					$location.url("/familiares");
 				break;
+				
 			};
 		});
 	}

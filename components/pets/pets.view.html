@@ -1,0 +1,60 @@
+<section>
+	<form name="frmRegistroAnimales" ng-submit="vm.addUser(vm.pet)" class="col-sm-6 col-sm-offset-3">
+
+	<h2>Registro Animales</h2>
+
+	<!-- primerNombre -->
+		<md-input-container flex-offset class="md-block">
+		    <label>Nombre del animal</label>
+			
+			<input type="text" name="primerNombre" required ng-model="vm.pet.firtsName" maxlength="10">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="required">El nombre es requerido.</div>
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+	<!-- segundoNOmbre	 -->
+
+		<md-input-container flex-offset class="md-block">
+		    <label>Ingrese segundo nombre</label>
+			
+			<input type="text" name="segundoNombre"  ng-model="vm.pet.secondName">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+
+	<md-input-container flex-offset class="md-block">
+		    <label>Ingrese el tipo de alimento</label>
+			
+			<input type="text" name="email" ng-model="vm.pet.email" >
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El correo electronico es requerido.</div>
+		    </div>
+		</md-input-container>
+
+	<!-- telefono	 -->
+
+	<md-input-container flex-offset class="md-block">
+		    <label>Ingrese un telefono</label>
+			
+			<input type="number" name="phone" ng-model="vm.pet.phone">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El telefono no debe tener mas de 8 numeros.</div>
+		    </div>
+		</md-input-container>
+
+		<div>
+			<h4>Ingrese la fecha de cumpleanos</h4>
+			<md-datepicker ng-model="vm.pet.birthdate" name="cumpleannos" md-placeholder="fecha"></md-datepicker>
+		</div>
+
+
+
+		<button class="btn btn-primary btn-lg" ng-disabled="frmRegistroAnimales.$error" type="submit">Agregar animal</button>		
+	</form>
+</section>

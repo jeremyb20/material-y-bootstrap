@@ -1,13 +1,13 @@
 <section>
-	<form name="frmRegistroUsuarios" ng-submit="vm.addUser(vm.user)" class="col-sm-6 col-sm-offset-3">
+	<form name="frmRegistroFamiliares" ng-submit="vm.addFamily(vm.family)" class="col-sm-6 col-sm-offset-3">
 
-	<h2>Registro Amigos</h2>
+	<h2>Registro Familiares</h2>
 
 	<!-- primerNombre -->
 		<md-input-container flex-offset class="md-block">
-		    <label>Ingrese un nombre</label>
+		    <label>Ingrese nombre del familiar</label>
 			
-			<input type="text" name="primerNombre" required ng-model="vm.user.firtsName" maxlength="10">
+			<input type="text" name="primerNombre" required ng-model="vm.family.firtsName" maxlength="10">
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="required">El nombre es requerido.</div>
@@ -19,7 +19,7 @@
 		<md-input-container flex-offset class="md-block">
 		    <label>Ingrese segundo nombre</label>
 			
-			<input type="text" name="segundoNombre"  ng-model="vm.user.secondName">
+			<input type="text" name="segundoNombre"  ng-model="vm.family.secondName">
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
@@ -31,7 +31,7 @@
 		<md-input-container flex-offset class="md-block">
 		    <label>Ingrese el primer apellido</label>
 			
-			<input type="text" name="primerApellido" required ng-model="vm.user.firstSurname" maxlength="10">
+			<input type="text" name="primerApellido" required ng-model="vm.family.firstSurname" maxlength="10">
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
@@ -43,7 +43,7 @@
 		<md-input-container flex-offset class="md-block">
 		    <label>Ingrese el segundo apellido</label>
 			
-			<input type="text" name="segundoApellido" ng-model="vm.user.secondSurname" maxlength="10">
+			<input type="text" name="segundoApellido" ng-model="vm.family.secondSurname" maxlength="10">
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
@@ -55,10 +55,23 @@
 	<md-input-container flex-offset class="md-block">
 		    <label>Ingrese el correo electronico</label>
 			
-			<input type="text" name="email" ng-model="vm.user.email" >
+			<input type="text" name="email" ng-model="vm.family.email" >
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="maxlength">El correo electronico es requerido.</div>
+		    </div>
+		</md-input-container>
+
+
+		<!-- arbolGenealogico-->
+
+	<md-input-container flex-offset class="md-block">
+		    <label>Ingrese el tipo de genealogía</label>
+			
+			<input type="text" name="email" ng-model="vm.family.email" >
+
+		    <div ng-messages="projectForm.genealogy.$error">
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>v>
 		    </div>
 		</md-input-container>
 
@@ -67,7 +80,7 @@
 	<md-input-container flex-offset class="md-block">
 		    <label>Ingrese un telefono</label>
 			
-			<input type="number" name="phone" ng-model="vm.user.phone">
+			<input type="number" name="phone" ng-model="vm.family.phone">
 
 		    <div ng-messages="projectForm.description.$error">
 		      <div ng-message="maxlength">El telefono no debe tener mas de 8 numeros.</div>
@@ -76,11 +89,11 @@
 
 		<div>
 			<h4>Ingrese la fecha de cumpleanos</h4>
-			<md-datepicker ng-model="vm.user.birthdate" name="cumpleannos" md-placeholder="fecha"></md-datepicker>
+			<md-datepicker ng-model="vm.family.birthdate" name="cumpleannos" md-placeholder="fecha"></md-datepicker>
 		</div>
 
 
 
-		<button class="btn btn-primary btn-lg" ng-disabled="frmRegistroUsuarios.$error" type="submit">Agregar amigo</button>		
+		<button class="btn btn-primary btn-lg" ng-disabled="frmRegistroFamiliares.$error" type="submit">Agregar amigo</button>		
 	</form>
 </section>
