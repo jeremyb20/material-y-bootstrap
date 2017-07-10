@@ -1,0 +1,86 @@
+<section>
+	<form name="frmRegistroUsuarios" ng-submit="vm.addUser(vm.user)" class="col-sm-6 col-sm-offset-3">
+
+	<h2>Registro Amigos</h2>
+
+	<!-- primerNombre -->
+		<md-input-container flex-offset class="md-block">
+		    <label>Ingrese un nombre</label>
+			
+			<input type="text" name="primerNombre" required ng-model="vm.user.firtsName" maxlength="10">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="required">El nombre es requerido.</div>
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+	<!-- segundoNOmbre	 -->
+
+		<md-input-container flex-offset class="md-block">
+		    <label>Ingrese segundo nombre</label>
+			
+			<input type="text" name="segundoNombre"  ng-model="vm.user.secondName" maxlength="10">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+
+	<!-- primerApellido -->
+
+		<md-input-container flex-offset class="md-block">
+		    <label>Ingrese el primer apellido</label>
+			
+			<input type="text" name="primerApellido" required ng-model="vm.user.firstSurname">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+
+	<!-- segundoapellido -->
+
+		<md-input-container flex-offset class="md-block">
+		    <label>Ingrese el segundo apellido</label>
+			
+			<input type="text" name="segundoApellido" ng-model="vm.user.secondSurname" maxlength="10">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El nombre no debe tener mas de 10 letras.</div>
+		    </div>
+		</md-input-container>
+
+	<!-- correoelectronico -->
+
+	<md-input-container flex-offset class="md-block">
+		    <label>Ingrese el correo electronico</label>
+			
+			<input type="text" name="email" ng-model="vm.user.email" >
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El correo electronico es requerido.</div>
+		    </div>
+		</md-input-container>
+
+	<!-- telefono	 -->
+
+	<md-input-container flex-offset class="md-block">
+		    <label>Ingrese un telefono</label>
+			
+			<input type="number" name="phone" ng-model="vm.user.phone">
+
+		    <div ng-messages="projectForm.description.$error">
+		      <div ng-message="maxlength">El telefono no debe tener mas de 8 numeros.</div>
+		    </div>
+		</md-input-container>
+
+		<div>
+			<h4>Ingrese la fecha de cumpleanos</h4>
+			<md-datepicker ng-model="vm.user.birthdate" name="cumpleannos" md-placeholder="fecha"></md-datepicker>
+		</div>
+
+
+
+		<button class="btn btn-primary btn-lg" ng-disabled="frmRegistroUsuarios.$error" type="submit" >Agregar amigo</button>		
+	</form>
+</section>

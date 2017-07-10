@@ -1,0 +1,26 @@
+{
+  "name": "material y bootstrap",
+  "authors": [
+    "jeremyb20 <jbaccab@ucenfotec.ac.cr>"
+  ],
+  "description": "proyecto",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^0.4.2",
+    "angular-material": "^1.1.4",
+    "angular-css": "^1.0.8",
+    "oclazyload": "^1.1.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
